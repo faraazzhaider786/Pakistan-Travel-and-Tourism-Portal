@@ -1,0 +1,237 @@
+/* =========================
+   PROVINCES SECTION
+========================= */
+
+.provinces-section {
+    width: 60%;
+    padding-top: 30px;
+    padding-left: 20%;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-around;
+}
+
+.provinces-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+/* =========================
+   GENERAL PROVINCE CARD
+========================= */
+
+.province-card {
+    position: relative;
+
+    min-height: 420px;
+
+    background-size: cover;
+    background-position: center;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: flex-end;
+
+    color: white;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================
+   DARK IMAGE OVERLAY
+========================= */
+
+.province-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.75),
+        rgba(0, 0, 0, 0.05)
+    );
+}
+
+
+/* =========================
+   PROVINCE CONTENT
+========================= */
+
+.province-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    padding: 35px;
+}
+
+.province-content h2 {
+    margin: 0 0 12px;
+
+    font-size: 38px;
+    font-weight: 700;
+
+    text-transform: capitalize;
+}
+
+.province-content p {
+    max-width: 900px;
+
+    margin: 0 0 18px;
+
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   READ MORE
+========================= */
+
+.read-more {
+    display: inline-block;
+
+    color: white;
+
+    font-size: 17px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition: opacity 0.2s ease;
+}
+
+.read-more:hover {
+    opacity: 0.75;
+    text-decoration: underline;
+}
+
+
+/* =========================
+   ISLAMABAD - 100%
+========================= */
+
+.islamabad {
+    width: 100%;
+    min-height: 430px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   PROVINCE ROWS
+========================= */
+
+.province-row {
+    width: 100%;
+
+    display: flex;
+
+    gap: 35px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   PUNJAB 40% / SINDH 60%
+========================= */
+
+.punjab {
+    width: 40%;
+}
+
+.sindh {
+    width: 60%;
+}
+
+
+/* =========================
+   KP 60% / BALOCHISTAN 40%
+========================= */
+
+.kp {
+    width: 60%;
+}
+
+.balochistan {
+    width: 40%;
+}
+
+
+/* =========================
+   AZAD KASHMIR 40% /
+   GILGIT-BALTISTAN 60%
+========================= */
+
+.azad-kashmir {
+    width: 40%;
+}
+
+.gilgit-baltistan {
+    width: 60%;
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+.province-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .provinces-section {
+        padding: 20px 15px;
+    }
+
+    .province-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .punjab,
+    .sindh,
+    .kp,
+    .balochistan,
+    .azad-kashmir,
+    .gilgit-baltistan {
+        width: 100%;
+    }
+
+    .province-card,
+    .islamabad {
+        min-height: 380px;
+        margin-bottom: 20px;
+    }
+
+    .province-content {
+        padding: 25px;
+    }
+
+    .province-content h2 {
+        font-size: 30px;
+    }
+
+    .province-content p {
+        font-size: 16px;
+    }
+}

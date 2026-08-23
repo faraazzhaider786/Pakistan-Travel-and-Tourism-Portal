@@ -1,0 +1,255 @@
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    width: 100%;
+
+    margin-top: 70px;
+
+    background: #075c38;
+
+    color: white;
+}
+
+
+/* =========================
+   MAIN FOOTER
+========================= */
+
+.footer-main {
+    width: 90%;
+
+    margin: 0 auto;
+
+    padding: 60px 0 50px;
+
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr;
+
+    gap: 40px;
+}
+
+
+/* =========================
+   FOOTER COLUMNS
+========================= */
+
+.footer-column {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.footer-about {
+    padding-right: 30px;
+}
+
+
+.footer-about h2 {
+    margin: 0 0 15px;
+
+    font-size: 26px;
+
+    font-weight: 700;
+}
+
+
+.footer-about p {
+    margin: 0 0 8px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+.footer-column h3 {
+    margin: 0 0 12px;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   LINKS
+========================= */
+
+.footer-column a {
+    width: fit-content;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 15px;
+
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+}
+
+
+.footer-column a:hover {
+    color: white;
+
+    transform: translateX(3px);
+}
+
+
+/* =========================
+   CONTACT TEXT
+========================= */
+
+.footer-column p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   BOTTOM FOOTER
+========================= */
+
+.footer-bottom {
+    width: 90%;
+
+    margin: 0 auto;
+
+    padding: 20px 0;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.footer-bottom p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 14px;
+}
+
+
+.footer-bottom-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.footer-bottom-links a {
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 14px;
+
+    text-decoration: none;
+}
+
+
+.footer-bottom-links a:hover {
+    color: white;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    .footer-main {
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 40px 25px;
+    }
+
+    .footer-about {
+        grid-column: span 3;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .footer-main {
+        width: 90%;
+
+        grid-template-columns: 1fr 1fr;
+
+        padding: 45px 0 35px;
+
+        gap: 35px 20px;
+    }
+
+    .footer-about {
+        grid-column: span 2;
+
+        padding-right: 0;
+    }
+
+    .footer-bottom {
+        width: 90%;
+
+        flex-direction: column;
+
+        gap: 12px;
+
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .footer-main {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-about {
+        grid-column: span 1;
+    }
+
+    .footer-bottom-links {
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+    .footer-bottom-links span {
+        display: none;
+    }
+}

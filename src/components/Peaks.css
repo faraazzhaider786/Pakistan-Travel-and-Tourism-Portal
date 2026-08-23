@@ -1,0 +1,290 @@
+.peaks-section {
+    width: 100%;
+    padding: 80px 30px;
+    background: #f7f7f5;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.peaks-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.peaks-heading {
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.peaks-subtitle {
+    margin: 0 0 8px;
+
+    color: #00804b;
+
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'Times New Roman', Times, serif;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.peaks-heading h2 {
+    margin: 0 0 15px;
+
+    font-size: 42px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #222;
+}
+
+.peaks-intro {
+    max-width: 650px;
+    margin: 0 auto;
+
+    color: #666;
+
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   PEAK LIST
+========================= */
+
+.peaks-list {
+    width: 100%;
+}
+
+
+/* =========================
+   INDIVIDUAL PEAK
+========================= */
+
+.peak-item {
+    width: 100%;
+
+    border-top: 1px solid #d8d8d8;
+
+    background: white;
+}
+
+.peak-item:last-child {
+    border-bottom: 1px solid #d8d8d8;
+}
+
+
+/* =========================
+   PEAK BUTTON
+========================= */
+
+.peak-button {
+    width: 100%;
+
+    padding: 25px 20px;
+
+    border: none;
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+
+    text-align: left;
+}
+
+.peak-button:hover {
+    background: #f5faf7;
+}
+
+
+.peak-name {
+    flex: 1;
+
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+
+    color: #222;
+}
+
+
+.peak-height {
+    margin-right: 30px;
+
+    color: #00804b;
+
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+.peak-arrow {
+    width: 30px;
+
+    color: #00804b;
+
+    font-size: 28px;
+    font-weight: 300;
+
+    text-align: center;
+}
+
+
+/* =========================
+   OPEN CONTENT
+========================= */
+
+.peak-content {
+    display: flex;
+
+    width: 100%;
+
+    padding: 0 20px 30px;
+
+    gap: 35px;
+
+    animation: peakOpen 0.3s ease;
+}
+
+
+@keyframes peakOpen {
+
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.peak-image-container {
+    width: 42%;
+
+    flex-shrink: 0;
+}
+
+
+.peak-image {
+    width: 100%;
+    height: 280px;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.peak-description {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.peak-description h3 {
+    margin: 0 0 15px;
+
+    font-size: 30px;
+
+    color: #222;
+}
+
+
+.peak-description p {
+    margin: 0;
+
+    color: #555;
+
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   OPEN PEAK
+========================= */
+
+.peak-item.open .peak-button {
+    background: #f5faf7;
+}
+
+.peak-item.open .peak-name {
+    color: #00804b;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .peaks-section {
+        padding: 50px 15px;
+    }
+
+    .peaks-heading h2 {
+        font-size: 32px;
+    }
+
+    .peak-button {
+        padding: 20px 15px;
+    }
+
+    .peak-name {
+        font-size: 20px;
+    }
+
+    .peak-height {
+        display: none;
+    }
+
+    .peak-content {
+        flex-direction: column;
+
+        padding: 0 15px 25px;
+
+        gap: 20px;
+    }
+
+    .peak-image-container {
+        width: 100%;
+    }
+
+    .peak-image {
+        height: 230px;
+    }
+
+    .peak-description h3 {
+        font-size: 25px;
+    }
+
+    .peak-description p {
+        font-size: 16px;
+    }
+}

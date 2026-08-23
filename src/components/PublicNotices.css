@@ -1,0 +1,99 @@
+/* PublicNotices.css */
+
+.notices-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.notices-main-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #8c8f94; /* Light grayish color matching the image */
+  margin-bottom: 30px;
+}
+
+/* Wrapper to allow horizontal scrolling on very small mobile screens */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.notices-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+/* Header Styles */
+.notices-table th {
+  padding: 16px 12px;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  font-weight: 700;
+  color: #000;
+  vertical-align: middle;
+}
+
+/* Adjusting the subtext in the header */
+.notices-table th span {
+  font-weight: 700;
+}
+
+/* Row Styles */
+.notices-table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+  color: #333;
+}
+
+/* Adds a subtle gray hover effect to the rows */
+.notices-table tbody tr:hover {
+  background-color: #f9fafb; 
+}
+
+/* Column Widths & Alignments */
+.col-sr-no {
+  width: 60px;
+  text-align: center;
+}
+
+.icon-cell {
+  font-size: 0.7rem; /* Makes the bullet icon a bit smaller */
+}
+
+.col-notice {
+  width: auto;
+}
+
+.col-details {
+  width: 120px;
+  text-align: right; /* Aligns "View Details" and "Download" to the right */
+}
+
+/* Text formatting for the notices */
+.notice-highlight {
+  font-weight: 700;
+  color: #000;
+}
+
+.notice-text {
+  font-weight: 400;
+}
+
+/* Download Link Button */
+.download-btn {
+  color: #007bff; /* Standard bright blue */
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.download-btn:hover {
+  text-decoration: underline;
+  color: #0056b3; /* Darker blue on hover */
+}

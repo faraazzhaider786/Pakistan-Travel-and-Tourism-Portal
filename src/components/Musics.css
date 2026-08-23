@@ -1,0 +1,244 @@
+/* =========================
+   MUSIC SECTION
+========================= */
+
+.music-section {
+    width: 98%;
+    height: 420px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+
+    background: #f8f8f8;
+}
+
+
+/* =========================
+   LEFT IMAGE
+========================= */
+
+.music-image-container {
+    width: 55%;
+    height: 420px;
+    border-radius: 30px;
+
+    overflow: hidden;
+}
+
+
+.music-image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: opacity 0.3s ease;
+}
+
+
+/* =========================
+   RIGHT CONTENT
+========================= */
+
+.music-content {
+    width: 45%;
+
+    padding: 30px 6%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.music-title {
+    margin: 0 0 20px;
+
+    color: #008000;
+
+    font-size: 42px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   MUSIC TABS
+========================= */
+
+.music-tabs {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px 30px;
+
+    margin-bottom: 20px;
+}
+
+
+.music-tab {
+    padding: 10px 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #777;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+
+.music-tab:hover {
+    color: #008000;
+}
+
+
+/* =========================
+   SELECTED MUSIC
+========================= */
+
+.music-tab.active {
+    padding: 11px 22px;
+
+    border: 2px solid #222;
+
+    border-radius: 30px;
+
+    color: #008000;
+
+    background: white;
+}
+
+
+/* =========================
+   MUSIC INFORMATION
+========================= */
+
+.music-info {
+    margin-top: 5px;
+}
+
+
+.music-info h3 {
+    margin: 0 0 15px;
+
+    color: #222;
+
+    font-size: 26px;
+    font-weight: 700;
+}
+
+
+.music-info p {
+    max-width: 680px;
+
+    margin: 0 0 25px;
+
+    color: #777;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================
+   READ MORE
+========================= */
+
+.music-read-more {
+    width: fit-content;
+
+    color: #0080ff;
+
+    font-size: 16px;
+
+    text-decoration: none;
+}
+
+
+.music-read-more:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   RESPONSIVE - TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .music-section {
+        width: 90%;
+        height: auto;
+
+        flex-direction: column;
+    }
+
+    .music-image-container {
+        width: 100%;
+        height: 300px;
+    }
+
+    .music-content {
+        width: 100%;
+
+        padding: 50px 30px;
+    }
+}
+
+
+/* =========================
+   RESPONSIVE - MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .music-section {
+        width: 92%;
+    }
+
+    .music-title {
+        font-size: 38px;
+    }
+
+    .music-content {
+        padding: 40px 20px;
+    }
+
+    .music-tabs {
+        gap: 8px 15px;
+    }
+
+    .music-tab {
+        font-size: 14px;
+    }
+
+    .music-info h3 {
+        font-size: 24px;
+    }
+
+    .music-info p {
+        font-size: 16px;
+    }
+
+    .music-image-container {
+        height: 350px;
+    }
+}

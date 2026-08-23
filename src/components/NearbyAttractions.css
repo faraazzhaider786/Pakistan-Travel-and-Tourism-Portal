@@ -1,0 +1,560 @@
+/* ================================
+   NEARBY ATTRACTIONS SECTION
+================================ */
+
+.nearby-section {
+    width: 100%;
+    background: #f7f8f6;
+    padding: 80px 0;
+}
+
+.nearby-container {
+    width: 90%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.nearby-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.nearby-small-title {
+    display: block;
+
+    color: #008000;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.nearby-header h2 {
+    margin: 0 0 15px;
+
+    color: #222;
+
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.nearby-header p {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: #777;
+
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* ================================
+   CONTROLS
+================================ */
+
+.nearby-controls {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+
+    padding: 18px 20px;
+
+    background: white;
+
+    border: 1px solid #e5e5e5;
+}
+
+
+/* FIND LOCATION BUTTON */
+
+.location-button {
+    border: none;
+
+    padding: 13px 22px;
+
+    background: #008000;
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.location-button:hover {
+    background: #006b00;
+
+    transform: translateY(-2px);
+}
+
+
+/* RADIUS */
+
+.radius-control {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.radius-control label {
+    color: #555;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.radius-control select {
+    padding: 10px 35px 10px 12px;
+
+    border: 1px solid #ccc;
+
+    background: white;
+
+    color: #333;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+.radius-control select:focus {
+    outline: none;
+
+    border-color: #008000;
+}
+
+
+/* ================================
+   LOCATION INFO
+================================ */
+
+.location-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px 18px;
+
+    margin-bottom: 35px;
+
+    background: #edf7ed;
+
+    border-left: 4px solid #008000;
+}
+
+.location-info > span {
+    font-size: 22px;
+}
+
+.location-info strong {
+    display: block;
+
+    color: #222;
+
+    font-size: 14px;
+}
+
+.location-info p {
+    margin: 3px 0 0;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* ================================
+   ERROR
+================================ */
+
+.location-error {
+    padding: 15px 20px;
+
+    margin-bottom: 30px;
+
+    background: #fff3f3;
+
+    border-left: 4px solid #d33;
+
+    color: #b00000;
+
+    font-size: 14px;
+}
+
+
+/* ================================
+   RESULTS HEADER
+================================ */
+
+.results-heading {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 22px;
+}
+
+.results-heading h3 {
+    margin: 0;
+
+    color: #222;
+
+    font-size: 24px;
+}
+
+.results-heading span {
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* ================================
+   CARDS GRID
+================================ */
+
+.attractions-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* ================================
+   CARD
+================================ */
+
+.attraction-card {
+    overflow: hidden;
+
+    background: white;
+
+    border: 1px solid #e7e7e7;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.attraction-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ================================
+   IMAGE
+================================ */
+
+.attraction-image {
+    position: relative;
+
+    width: 100%;
+    height: 210px;
+
+    overflow: hidden;
+
+    background: #e9e9e9;
+}
+
+.attraction-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+.attraction-card:hover .attraction-image img {
+    transform: scale(1.06);
+}
+
+
+/* PLACEHOLDER */
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 55px;
+}
+
+
+/* ================================
+   DISTANCE BADGE
+================================ */
+
+.distance-badge {
+    position: absolute;
+
+    right: 12px;
+    bottom: 12px;
+
+    padding: 7px 11px;
+
+    background: white;
+
+    color: #008000;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ================================
+   CARD CONTENT
+================================ */
+
+.attraction-content {
+    padding: 22px;
+}
+
+.attraction-type {
+    display: inline-block;
+
+    margin-bottom: 9px;
+
+    color: #008000;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.attraction-content h3 {
+    margin: 0 0 7px;
+
+    color: #222;
+
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.attraction-region {
+    margin: 0 0 14px;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+.attraction-description {
+    min-height: 65px;
+
+    margin: 0 0 20px;
+
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* ================================
+   DETAILS BUTTON
+================================ */
+
+.details-button {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 100%;
+
+    padding: 11px 0;
+
+    border: none;
+
+    border-top: 1px solid #e5e5e5;
+
+    background: transparent;
+
+    color: #008000;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.details-button span {
+    font-size: 18px;
+
+    transition: transform 0.25s ease;
+}
+
+.details-button:hover {
+    color: #005f00;
+}
+
+.details-button:hover span {
+    transform: translateX(5px);
+}
+
+
+/* ================================
+   NO RESULTS
+================================ */
+
+.no-results {
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background: white;
+
+    border: 1px solid #e5e5e5;
+}
+
+.no-results-icon {
+    font-size: 45px;
+
+    margin-bottom: 10px;
+}
+
+.no-results h3 {
+    margin: 0 0 10px;
+
+    color: #222;
+
+    font-size: 24px;
+}
+
+.no-results p {
+    margin: 0 0 20px;
+
+    color: #777;
+}
+
+.no-results button {
+    padding: 11px 20px;
+
+    border: none;
+
+    background: #008000;
+
+    color: white;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1000px) {
+
+    .attractions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .nearby-section {
+        padding: 60px 0;
+    }
+
+    .nearby-container {
+        width: 92%;
+    }
+
+    .nearby-header h2 {
+        font-size: 34px;
+    }
+
+    .nearby-controls {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 15px;
+    }
+
+    .location-button {
+        width: 100%;
+    }
+
+    .radius-control {
+        justify-content: space-between;
+    }
+
+    .attractions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .results-heading {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 5px;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .nearby-header h2 {
+        font-size: 30px;
+    }
+
+    .attraction-image {
+        height: 190px;
+    }
+
+    .attraction-content h3 {
+        font-size: 20px;
+    }
+
+}

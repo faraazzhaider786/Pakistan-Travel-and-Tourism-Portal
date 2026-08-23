@@ -1,0 +1,169 @@
+/* MusicIcons.css - Separate stylesheet for Music Icons component */
+
+.music-icons-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px 60px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #333333;
+  box-sizing: border-box;
+}
+
+/* Header Section */
+.music-icons-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.music-icons-title {
+  color: #0b8457;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.2px;
+}
+
+.music-icons-description {
+  color: #666666;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* Card Container */
+.music-icons-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 32px 36px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Artist Item */
+.artist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  padding: 24px 0;
+}
+
+.artist-item:first-child {
+  padding-top: 8px;
+}
+
+.artist-item:last-child {
+  padding-bottom: 8px;
+}
+
+/* Artist Image Styling */
+.artist-image-wrapper {
+  flex-shrink: 0;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.artist-image {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Zarsanga specific wrapper background matching screenshot */
+.artist-image-wrapper.container-style {
+  background-color: #f1f5f9;
+  border-radius: 8px;
+  padding: 8px;
+  width: 140px;
+  height: 140px;
+}
+
+.artist-image-wrapper.container-style .artist-image {
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+}
+
+/* Artist Info Content */
+.artist-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.artist-name {
+  color: #0b8457;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+}
+
+.artist-years {
+  color: #8892b0;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  letter-spacing: 0.2px;
+}
+
+.artist-bio {
+  color: #64748b;
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Divider Line */
+.artist-divider {
+  border: none;
+  border-top: 1px solid #e2e8f0;
+  margin: 8px 0;
+  width: 100%;
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 640px) {
+  .music-icons-container {
+    padding: 24px 12px;
+  }
+
+  .music-icons-title {
+    font-size: 22px;
+  }
+
+  .music-icons-description {
+    font-size: 13.5px;
+  }
+
+  .music-icons-card {
+    padding: 20px 16px;
+  }
+
+  .artist-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .artist-image-wrapper {
+    width: 120px;
+    height: 120px;
+  }
+
+  .artist-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .artist-image-wrapper.container-style {
+    width: 120px;
+    height: 120px;
+  }
+}
