@@ -66,11 +66,11 @@ function Navbar() {
                             Home
                         </NavLink>
                          <NavLink to="/nearby-attractions">
-                            Nearby Attractions
+                            Nearby Tourist Spots
                         </NavLink>
 
                         <NavLink to="/attractions">
-                            All Attractions
+                            Explore Pakistan
                         </NavLink>
 
                         <NavLink to="/about">

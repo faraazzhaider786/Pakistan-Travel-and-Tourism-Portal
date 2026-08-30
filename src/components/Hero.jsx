@@ -25,13 +25,13 @@ function Hero() {
                     to="/nearby-attractions"
                     className="hero-nearby-button"
                 >
-                    📍 Explore Nearby Attractions
+                    📍Nearby Tourist Spots
                 </Link>
                 <Link
                     to="/attractions"
                     className="hero-nearby-button"
                 >
-                    📍 Explore Beauty Of Pakistan
+                    Explore Pakistan
                 </Link>
 
             </div>    

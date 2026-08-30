@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import "./NearbyAttractions.css";
+import attractionImages from "../utils/attractionImages";
 
-import attractions from "../data/attractions";
-import calculateDistance from "../utils/distance";
 
 function NearbyAttractions() {
 
@@ -11,11 +10,16 @@ function NearbyAttractions() {
     const [nearbyAttractions, setNearbyAttractions] = useState([]);
     const [radius, setRadius] = useState(10);
     const [error, setError] = useState("");
+    const [loading, setLoading] = useState(false);
 
-   const getLocation = () => {
+  const getLocation = () => {
+
+    setLoading(true);
+    setError("");
 
     if (!navigator.geolocation) {
         setError("Geolocation is not supported by your browser.");
+        setLoading(false);
         return;
     }
 
@@ -26,7 +30,6 @@ function NearbyAttractions() {
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
 
-            // Save user's coordinates
             setLocation({
                 latitude,
                 longitude
@@ -34,7 +37,7 @@ function NearbyAttractions() {
 
             setError("");
 
-            // Get location name from latitude and longitude
+            // Get location name
             try {
 
                 const response = await fetch(
@@ -73,9 +76,12 @@ function NearbyAttractions() {
 
                 setLocationName("");
             }
+
         },
 
         (error) => {
+
+            setLoading(false);
 
             if (error.code === error.PERMISSION_DENIED) {
 
@@ -112,33 +118,45 @@ function NearbyAttractions() {
 
     useEffect(() => {
 
-        if (!location) {
-            return;
+    if (!location) {
+        return;
+    }
+
+    const fetchNearbyAttractions = async () => {
+
+        
+        setError("");
+
+        try {
+
+            const response = await fetch(
+                `http://localhost:5000/api/attractions/nearby?lat=${location.latitude}&lng=${location.longitude}&radius=${radius}`
+            );
+
+            if (!response.ok) {
+                throw new Error("Failed to fetch nearby attractions");
+            }
+
+            const data = await response.json();
+
+            setNearbyAttractions(data);
+
+        } catch (error) {
+
+            console.error("Error fetching nearby attractions:", error);
+
+            setError("Unable to load nearby attractions.");
+
+        } finally {
+
+            setLoading(false);
+
         }
+    };
 
-        const nearby = attractions
-            .map((attraction) => {
+    fetchNearbyAttractions();
 
-                const distance = calculateDistance(
-                    location.latitude,
-                    location.longitude,
-                    attraction.latitude,
-                    attraction.longitude
-                );
-
-                return {
-                    ...attraction,
-                    distance
-                };
-            })
-
-            .filter((attraction) => attraction.distance <= radius)
-
-            .sort((a, b) => a.distance - b.distance);
-
-        setNearbyAttractions(nearby);
-
-    }, [location, radius]);
+}, [location, radius]);
 
     const openDirections = (attraction) => {
 
@@ -156,6 +174,16 @@ function NearbyAttractions() {
     window.open(url, "_blank");
 };
 
+const getAttractionImage = (imageName) => {
+
+    if (!imageName) {
+        return null;
+    }
+
+    const imagePath = `../assets/${imageName}`;
+
+    return attractionImages[imagePath];
+};
 
     return (
         <section className="nearby-section">
@@ -171,12 +199,12 @@ function NearbyAttractions() {
                         </span>
 
                         <h2>
-                            Nearby Attractions
+                            Nearby Tourist Spots
                         </h2>
 
                         <p>
                             Explore beautiful places and discover
-                            attractions close to your current location.
+                            spots close to your current location.
                         </p>
                     </div>
 
@@ -190,7 +218,7 @@ function NearbyAttractions() {
                         className="location-button"
                         onClick={getLocation}
                     >
-                        📍 Find Attractions Near Me
+                        📍 Find Beautiful Spots Near Me
                     </button>
 
 
@@ -253,8 +281,23 @@ function NearbyAttractions() {
                 )}
 
 
+                {loading && (
+    <div className="nearby-loader">
+
+        <div className="loader-spinner"></div>
+
+        <h3>Finding nearby attractions...</h3>
+
+        <p>
+            Please wait while we find attractions near your location.
+        </p>
+
+    </div>
+)}
+
+
                 {/* RESULTS */}
-                {nearbyAttractions.length > 0 && (
+                {!loading && nearbyAttractions.length > 0 && (
 
                     <div className="nearby-results">
 
@@ -277,7 +320,7 @@ function NearbyAttractions() {
 
                                 <article
                                     className="attraction-card"
-                                    key={attraction.id}
+                                    key={attraction._id}
                                 >
 
                                     {/* IMAGE */}
@@ -285,8 +328,8 @@ function NearbyAttractions() {
 
                                         {attraction.image ? (
                                             <img
-                                                src={attraction.image}
-                                                alt={attraction.name}
+                                            src={getAttractionImage(attraction.image)}
+                                            alt={attraction.name}
                                             />
                                         ) : (
                                             <div className="image-placeholder">
@@ -341,6 +384,7 @@ function NearbyAttractions() {
 
                 {/* NO RESULTS */}
                 {location &&
+                    !loading &&
                     nearbyAttractions.length === 0 && (
                         <div className="no-results">
 

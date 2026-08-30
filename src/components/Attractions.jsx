@@ -1,9 +1,48 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import attractions from "../data/attractions";
+// import attractions from "../data/attractions";
 import "./Attractions.css";
+import attractionImages from "../utils/attractionImages";
 
 function Attractions() {
+    const [attractions, setAttractions] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState("");
+
+    useEffect(() => {
+
+    const fetchAttractions = async () => {
+
+        try {
+
+            const response = await fetch(
+                "http://localhost:5000/api/attractions"
+            );
+
+            if (!response.ok) {
+                throw new Error("Failed to fetch attractions");
+            }
+
+            const data = await response.json();
+
+            setAttractions(data);
+
+        } catch (error) {
+
+            console.error(error);
+
+            setError("Unable to load attractions.");
+
+        } finally {
+
+            setLoading(false);
+
+        }
+    };
+
+    fetchAttractions();
+
+}, []);
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedProvince, setSelectedProvince] = useState("All");
     const [selectedType, setSelectedType] = useState("All");
@@ -31,6 +70,17 @@ function Attractions() {
         matchesType
     );
 });
+
+const getAttractionImage = (imageName) => {
+
+    if (!imageName) {
+        return null;
+    }
+
+    const imagePath = `../assets/${imageName}`;
+
+    return attractionImages[imagePath];
+};
     return (
         <section className="attractions-page">
 
@@ -47,12 +97,12 @@ function Attractions() {
                     </span>
 
                     <h1>
-                        Explore Attractions
+                        Explore Beauty of Pakistan 
                     </h1>
 
                     <p>
                         Discover the beautiful landmarks, heritage sites,
-                        mountains, lakes and other attractions of Pakistan.
+                        mountains, lakes and beauty of Pakistan.
                     </p>
 
                 </div>
@@ -127,7 +177,7 @@ function Attractions() {
     <div className="filter-group">
 
         <label htmlFor="type">
-            Attraction Type
+            Place Type
         </label>
 
         <select
@@ -187,7 +237,7 @@ function Attractions() {
                 <div className="attractions-results-header">
 
                     <h2>
-                        All Attractions
+                        All Beautiful Places of Pakistan
                     </h2>
 
                     <span>
@@ -205,7 +255,7 @@ function Attractions() {
 
                         <article
                             className="explore-card"
-                            key={attraction.id}
+                            key={attraction._id}
                         >
 
                             {/* IMAGE */}
@@ -215,9 +265,8 @@ function Attractions() {
                                 {attraction.image ? (
 
                                     <img
-                                        src={attraction.image}
-                                        alt={attraction.name}
-                                    />
+                                    src={getAttractionImage(attraction.image)}
+                                    alt={attraction.name}/>
 
                                 ) : (
 
@@ -251,7 +300,7 @@ function Attractions() {
                                 </p>
 
                                 <Link
-                                    to={`/attractions/${attraction.id}`}
+                                    to={`/attractions/${attraction._id}`}
                                     className="explore-card-button"
                                 >
                                     View Details
