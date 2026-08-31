@@ -6,6 +6,7 @@ const cors = require("cors");
 const connectDB = require("./config/db");
 const attractionRoutes = require("./routes/attractionRoutes");
 const publicationRoutes = require("./routes/publicationRoutes");
+const publicNoticesRoutes = require("./routes/publicNoticesRoutes");
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(express.json());
 // Routes
 app.use("/api/attractions", attractionRoutes);
 app.use("/api/publications", publicationRoutes);
+app.use("/api/publicNotices", publicNoticesRoutes);
 
 app.get("/", (req, res) => {
     res.send("Tourism API is running!");
