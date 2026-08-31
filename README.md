@@ -28,6 +28,12 @@
 -	Filter attractions by province
 -	Filter attractions by category
 -	This allows users to quickly find relevant tourism destinations.
+
+  <img width="1906" height="935" alt="Screenshot 2026-08-30 234221" src="https://github.com/user-attachments/assets/87778d13-123e-40e5-a03a-0b1be3865e08" />
+  <img width="1860" height="949" alt="Screenshot 2026-08-30 234300" src="https://github.com/user-attachments/assets/0477ae6e-585e-475c-b47d-697231f67a76" />
+  
+
+
 ### Nearby Tourism Spots
 -	The application uses the browser's Geolocation API to obtain the user's current coordinates. The coordinates are then sent to the backend:
 ``` 
@@ -48,6 +54,9 @@ Nearby Attractions
 ●	50 km
 ●	100 km
 -	The system returns tourism spots located within the selected radius and displays the calculated distance from the user's location.
+
+<img width="1846" height="942" alt="Screenshot 2026-08-30 234350" src="https://github.com/user-attachments/assets/d0c5000a-3b07-4738-8cad-a21379c839fa" />
+
 ### Google Maps Integration
 -	Users can select “Get Directions” for an attraction. The application uses the user's current coordinates as the starting point and the attraction's coordinates as the destination, which opens Google Maps with directions between the two locations.
 ### Location Information
@@ -66,6 +75,11 @@ Longitude: 73.0479
 -	PDF document path
 -	Fallback background color
 -	Users can click “Read Me” to open the associated PDF document in a new browser tab.
+
+  <img width="1557" height="905" alt="Screenshot 2026-08-30 234418" src="https://github.com/user-attachments/assets/21bbe4d4-78f1-4daf-9a76-98e12b25cbdb" />
+  <img width="1900" height="962" alt="Screenshot 2026-08-30 234501" src="https://github.com/user-attachments/assets/bc3a6245-bee2-4e4d-88ba-7488894003dd" />
+
+
 ## System Architecture
 -	The application follows a client-server architecture:
 ``` 
